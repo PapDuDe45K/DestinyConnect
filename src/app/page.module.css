@@ -1,0 +1,177 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.nav {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.appName {
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: #3b82f6;
+  user-select: none;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navLinkButton, .navLinkLogin {
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.navLinkButton:hover {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.navLinkLogin:hover {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.hero {
+  max-width: 900px;
+  margin: 4rem auto 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.heroTitleAccent {
+  color: #9333ea;
+  text-shadow: 1px 1px 6px rgba(147, 51, 234, 0.5);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #6b7280;
+}
+
+.heroSubtitleAccentDebt {
+  color: #ef4444; /* red */
+  font-weight: 700;
+}
+
+.heroSubtitleAccentDestiny {
+  color: #3b82f6; /* blue */
+  font-weight: 700;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.heroButton {
+  background-color: #9333ea;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 8px 15px rgba(147, 51, 234, 0.3);
+  user-select: none;
+}
+
+.heroButton:hover {
+  background-color: #7e22ce;
+}
+
+/* Stats Section */
+.statsSection {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto 6rem;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.statCard {
+  background: white;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  flex: 1;
+  text-align: center;
+  user-select: none;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--color);
+}
+
+.statLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Dark mode support (optional) */
+.dark .main {
+  background-color: #1a202c;
+  color: #cbd5e1;
+}
+
+.dark .nav {
+  background-color: #2d3748;
+  box-shadow: none;
+}
+
+.dark .heroTitle, .dark .heroSubtitle {
+  color: #e2e8f0;
+}
+
+.dark .statCard {
+  background-color: #2d3748;
+  box-shadow: none;
+  color: #cbd5e1;
+}

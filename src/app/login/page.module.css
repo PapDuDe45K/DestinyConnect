@@ -1,0 +1,118 @@
+/* Common container for login/signup */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Light form wrapper */
+.formWrapper {
+  background-color: #fff;
+  color: #1f2937;
+  padding: 3rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 40px rgba(131, 58, 180, 0.2);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header with logo and theme toggle */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo + app name */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.appName {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #3b82f6; /* Brand blue */
+  user-select: none;
+}
+
+/* Headings */
+.heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.subheading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid #d1d5db;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+}
+
+/* Buttons */
+.button {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+/* Error message styling */
+.error {
+  color: #dc2626; /* Tailwind red-600 */
+  font-weight: 600;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .formWrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+}
