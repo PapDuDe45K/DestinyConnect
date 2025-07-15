@@ -3,10 +3,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
-import { ThemeProvider } from "next-themes"; // your current theme provider
-import { ChakraProvider } from "@chakra-ui/react";
- // import Chakra UI
+import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 
+// Geist Fonts
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -19,17 +18,31 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+// Chakra UI Theme Override (optional, here we set system mode)
+const theme = extendTheme({
+  config: {
+    initialColorMode: "system",
+    useSystemColorMode: true,
+  },
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
+      <head>
+        {/* Inject Chakra UI color mode script for SSR hydration */}
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      </head>
       <body className="min-h-screen font-sans antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ChakraProvider>
-            <AuthProvider>
-              <main className="min-h-screen flex flex-col">{children}</main>
-            </AuthProvider>
-          </ChakraProvider>
-        </ThemeProvider>
+        <ChakraProvider theme={theme}>
+          <AuthProvider>
+            <main className="min-h-screen flex flex-col">{children}</main>
+          </AuthProvider>
+        </ChakraProvider>
       </body>
     </html>
   );
